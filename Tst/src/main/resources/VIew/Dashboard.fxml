@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep.Controller.DashboardController">
+   <children>
+      <Button fx:id="btn_managecus" layoutX="18.0" layoutY="184.0" mnemonicParsing="false" onAction="#toCustomerManage" prefHeight="58.0" prefWidth="140.0" text="Manage Customer">
+         <font>
+            <Font name="Cambria" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_manageitem" layoutX="168.0" layoutY="184.0" mnemonicParsing="false" onAction="#toItemManage" prefHeight="58.0" prefWidth="140.0" text="Manage Item">
+         <font>
+            <Font name="Cambria" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_placeord" layoutX="320.0" layoutY="184.0" mnemonicParsing="false" onAction="#toPlaseOrder" prefHeight="58.0" prefWidth="140.0" text="Plase Order">
+         <font>
+            <Font name="Cambria" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_showord" layoutX="474.0" layoutY="184.0" mnemonicParsing="false" onAction="#showOrder" prefHeight="58.0" prefWidth="140.0" text="Show Orders">
+         <font>
+            <Font name="Cambria" size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="lbl_dash" layoutX="154.0" layoutY="53.0" prefHeight="58.0" prefWidth="325.0" style="-fx-border-color: red;" text="Simple POS System">
+         <font>
+            <Font name="Britannic Bold" size="34.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

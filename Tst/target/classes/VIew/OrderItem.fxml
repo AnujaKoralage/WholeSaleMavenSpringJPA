@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="586.0" prefWidth="792.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep.Controller.OrderItemController">
+   <children>
+      <Label layoutX="26.0" layoutY="42.0" text="Order ID" />
+      <Label layoutX="26.0" layoutY="85.0" text="Customer ID" />
+      <Label layoutX="412.0" layoutY="42.0" text="Order date" />
+      <Label layoutX="412.0" layoutY="85.0" text="Customer name" />
+      <ComboBox fx:id="cmb_cid" layoutX="143.0" layoutY="80.0" prefHeight="31.0" prefWidth="197.0" />
+      <TextField fx:id="txt_oid" layoutX="143.0" layoutY="37.0" prefHeight="31.0" prefWidth="197.0" />
+      <TextField fx:id="txt_odate" layoutX="535.0" layoutY="37.0" prefHeight="31.0" prefWidth="197.0" />
+      <TextField fx:id="txt_cusname" layoutX="534.0" layoutY="80.0" prefHeight="31.0" prefWidth="197.0" />
+      <Label layoutX="26.0" layoutY="146.0" text="Item code" />
+      <Label layoutX="26.0" layoutY="185.0" text="Qty on hand" />
+      <Label layoutX="26.0" layoutY="224.0" text="Qty" />
+      <ComboBox fx:id="cmb_itemcode" layoutX="143.0" layoutY="141.0" prefHeight="31.0" prefWidth="197.0" />
+      <TextField fx:id="txt_qtyonhand" layoutX="143.0" layoutY="180.0" prefHeight="31.0" prefWidth="197.0" />
+      <TextField fx:id="txt_qty" layoutX="143.0" layoutY="219.0" prefHeight="31.0" prefWidth="197.0" />
+      <Label layoutX="412.0" layoutY="146.0" text="Description" />
+      <Label layoutX="412.0" layoutY="185.0" text="Unit price" />
+      <TextField fx:id="txt_description" layoutX="535.0" layoutY="141.0" prefHeight="31.0" prefWidth="197.0" />
+      <TextField fx:id="txt_price" layoutX="534.0" layoutY="180.0" prefHeight="31.0" prefWidth="197.0" />
+      <Button fx:id="btn_add" layoutX="418.0" layoutY="219.0" mnemonicParsing="false" onAction="#addItem" text="ADD" />
+      <TableView fx:id="tbl_order" layoutX="10.0" layoutY="264.0" prefHeight="257.0" prefWidth="753.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Code" />
+          <TableColumn prefWidth="306.0" text="Description" />
+            <TableColumn minWidth="0.0" prefWidth="66.0" text="Qty" />
+            <TableColumn prefWidth="103.0" text="Unit price" />
+            <TableColumn minWidth="0.0" prefWidth="99.0" text="Total" />
+        </columns>
+      </TableView>
+      <Label layoutX="21.0" layoutY="535.0" text="Total" />
+      <Button fx:id="btn_purchase" layoutX="683.0" layoutY="530.0" mnemonicParsing="false" onAction="#purchaseOrder" text="Purchase" />
+      <TextField fx:id="txt_total" layoutX="68.0" layoutY="530.0" prefHeight="31.0" prefWidth="158.0" />
+      <Button fx:id="btn_back" layoutX="23.0" layoutY="6.0" mnemonicParsing="false" onAction="#backToDashboard" text="Back" />
+      <Button fx:id="btn_update" layoutX="411.0" layoutY="219.0" mnemonicParsing="false" onAction="#updateRow" text="Update" />
+      <Button fx:id="btn_newOrder" layoutX="502.0" layoutY="219.0" mnemonicParsing="false" onAction="#addNeworder" text="Add new Item" />
+      <Button layoutX="534.0" layoutY="530.0" mnemonicParsing="false" onAction="#generateItemsReport" text="Item Report" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="24c4a2c7-ece9-4742-a75f-4ecb8a0997f9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="289"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="701"/>
+	<parameter name="cusid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT orderdetails.orderid,orderdetails.orderdate, SUM(orderitems.qty*item.price) 
+	FROM item,orderitems,orderdetails
+	WHERE orderdetails.cusid=$P{cusid} AND orderdetails.orderid=orderitems.orderid
+	      AND orderitems.itemCode = item.code
+	GROUP BY orderdetails.orderid]]>
+	</queryString>
+	<field name="orderid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="orderid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetails"/>
+	</field>
+	<field name="orderdate" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="orderdate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetails"/>
+	</field>
+	<field name="SUM(orderitems.qty*item.price)" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="SUM(orderitems.qty*item.price)"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="185" height="50" uuid="df624ebf-2a66-4a27-8135-beb776cc43a8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="89565bfa-0f6d-419d-bd7d-2113a4313fab"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[orderid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="0" width="185" height="50" uuid="d3c0f9e2-0300-46e2-9f83-a1d92f7a166c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="adf3ded2-15b6-45d2-9d8b-42ccdff07779"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[orderdate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="185" height="50" uuid="8b4ed3ce-df2d-4b69-b080-8b608ea5b5c4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c58425e7-bfb4-40d1-99bb-a53501c70cdd"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="57" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="185" height="50" uuid="d719a7cd-bff3-469c-8744-fa7d4964caae">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="89565bfa-0f6d-419d-bd7d-2113a4313fab"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{orderid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="0" width="185" height="50" uuid="9e9522bf-546d-43d5-8bf3-bd077ab43830">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="adf3ded2-15b6-45d2-9d8b-42ccdff07779"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{orderdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="185" height="50" uuid="e996364f-b36a-427b-b8d5-f96170576f49">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c58425e7-bfb4-40d1-99bb-a53501c70cdd"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SUM(orderitems.qty*item.price)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
